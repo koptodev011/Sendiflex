@@ -261,14 +261,7 @@
                                         </div>
 
 
-                                        <div class="menu-item px-3">
-    <form action="{{ route('deleteearningdetails', ['id' => $user->id]) }}" method="POST" style="display:inline;">
-        @csrf
-        @method('DELETE')
-        <button type="submit" class="menu-link px-3">Delete</button>
-    </form>
-</div>
-
+                                      
                                     </div>
                                 </td>
                                 <!--end::Action=-->
