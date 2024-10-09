@@ -47,9 +47,7 @@ class manageyourmonth extends Controller
         return view('manageyourmonth', ['earnings' => $earnings, 'totalpayment' => $totalpayment]);
     }
 
-    public function deleteearningdetails($id){
-        dd("working");
-    }
+
 
     public function editearning(Request $request){
         $id = $request->query('id');
@@ -172,7 +170,17 @@ class manageyourmonth extends Controller
     return response()->json(['success' => true, 'message' => 'Earning updated successfully.']);
 }
 
+public function deleteearningdetails($id){
+    $user = Earning::findOrFail($id);
+    $user->delete();
+    return redirect()->route('month')->with('success', 'User updated successfully.');
+}
 
+public function deleteexpencedetails($id){
+    $user = Expence::findOrFail($id);
+    $user->delete();
+    return redirect()->route('month')->with('success', 'User updated successfully.');
+}
 public function displayexpence(){
     view('viewandprintexpence');
 }

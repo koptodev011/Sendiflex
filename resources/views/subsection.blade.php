@@ -26,7 +26,7 @@
 </head>
 
 <div style="margin-left:5px;" class="toolbar">
-    <h1>Earnings</h1>
+    <h1>Sub section</h1>
 </div>
 
 <body id="kt_body"
@@ -141,7 +141,7 @@
                             <div class="modal-dialog modal-dialog-centered mw-650px">
                                 <div class="modal-content">
                                     <div class="modal-header" id="kt_modal_add_user_header">
-                                        <h2 class="fw-bolder">Add Sub Section </h2>
+                                        <h2 class="fw-bolder">Create roadmap </h2>
                                         <div class="btn btn-icon btn-sm btn-active-icon-primary"
                                             data-kt-users-modal-action="close">
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"

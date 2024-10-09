@@ -251,15 +251,16 @@
                                         data-kt-menu="true">
 
 
-                                        <div class="menu-item px-3">
-                                            <a class="menu-link py-3"
-                                                href="{{ route('edit-plandetails', ['id' => $user->id]) }}">Edit</a>
-                                        </div>
 
 
                                         <div class="menu-item px-3">
-                                            <a class="menu-link px-3"
-                                                href="{{ route('deleteearningdetails', ['id' => $user->id]) }}">Delete</a>
+                                            <form method="POST"
+                                                action="{{ route('deleteexpencedetails', ['id' => $user->id]) }}">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="menu-link px-3"
+                                                    style="background: none; border: none; padding: 0; font: inherit; cursor: pointer;">Delete</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </td>

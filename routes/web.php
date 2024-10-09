@@ -210,8 +210,11 @@ Route::post('/printexpencelist',[App\Http\Controllers\PDFController::class,'prin
 Route::get('editearning', [App\Http\Controllers\manageyourmonth::class, 'editearning'])->name('editearning')->middleware('auth');
 Route::post('/updateearningdetails/{id}', [App\Http\Controllers\manageyourmonth::class, 'updateearningdetails'])->name('updateearningdetails')->middleware('auth');
 Route::get('/displayexpence',[App\Http\Controllers\manageyourmonth::class, 'displayexpence'])->middleware('auth');
-Route::delete('/deleteearningdetails/{id}', [App\Http\Controllers\BranchController::class, 'deleteearningdetails'])
+Route::delete('/deleteearningdetails/{id}', [App\Http\Controllers\manageyourmonth::class, 'deleteearningdetails'])
     ->name('deleteearningdetails')
+    ->middleware('auth');
+Route::delete('/deleteexpencedetails/{id}', [App\Http\Controllers\manageyourmonth::class, 'deleteexpencedetails'])
+    ->name('deleteexpencedetails')
     ->middleware('auth');
 
 //Calculaor assignment
@@ -223,6 +226,10 @@ Route::post('/calculate', [App\Http\Controllers\Calculatorcontroller::class, 'ca
 Route::get('activeinvestment', [App\Http\Controllers\ActiveInvestmentController::class, 'activeinvestment'])->name('activeinvestment');
 Route::get('investments', [App\Http\Controllers\ActiveInvestmentController::class, 'viewinvestments'])->name('viewinvestments')->middleware('auth');
 Route::post('/addinvestment', [App\Http\Controllers\ActiveInvestmentController::class, 'addinvestments']);
+Route::get('editinvestments', [App\Http\Controllers\ActiveInvestmentController::class, 'editinvestments'])->name('editinvestments')->middleware('auth');
+Route::delete('/deleteinvestmentdetails/{id}', [App\Http\Controllers\ActiveInvestmentController::class, 'deleteinvestmentdetails'])
+    ->name('deleteinvestmentdetails')
+    ->middleware('auth');
 
 
 //Educational plans
@@ -235,3 +242,5 @@ Route::post('addsubject', [App\Http\Controllers\Educationalplan::class, 'addsubj
 Route::get('/material',[App\Http\Controllers\Educationalplan::class,'material'])->name('material')->middleware('auth');
 Route::post('addroadmaps', [App\Http\Controllers\Educationalplan::class, 'addroadmaps'])->middleware('auth');
 Route::post('settimeline', [App\Http\Controllers\Educationalplan::class, 'settimeline'])->middleware('auth');
+Route::post('/printroadmap',[App\Http\Controllers\PDFController::class,'printroadmap'])->middleware('auth');
+

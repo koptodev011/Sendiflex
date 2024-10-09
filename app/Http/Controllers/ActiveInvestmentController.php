@@ -46,7 +46,20 @@ class ActiveInvestmentController extends Controller
         $investments->month_id=$id;
         $investments->save();
 
-        
+
         return response()->json(['success' => true, 'message' => 'Details added successfully.']);
     }
+
+    public function editinvestments(Request $request){
+        $id = $request->query('id');
+        $investment=Investment::where('id',$id)->first();
+        return view('editinvestments',compact('investment'));
+    }
+
+    public function deleteinvestmentdetails($id){
+        $user = Investment::findOrFail($id);
+        $user->delete();
+        return redirect()->route('activeinvestment')->with('success', 'User updated successfully.');
+    }
+
 }

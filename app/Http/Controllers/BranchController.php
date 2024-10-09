@@ -26,7 +26,7 @@ class BranchController extends Controller
         return view('branch', compact('branch'));
     }
 
-    
+
 
     public function createbranch(Request $request)
     {
@@ -35,32 +35,32 @@ class BranchController extends Controller
             'branch_name' => 'required|string|max:255',
             'branch_address' => 'nullable|string',
         ]);
-    
+
         if ($validator->fails()) {
             return response()->json(['error' => $validator->errors()], 400);
         }
-    
+
         // Save the branch
         $branch = new Branch();
         $branch->branch_name = $request->input('branch_name');
         $branch->branch_address = $request->input('branch_address');
         $branch->save();
-    
+
         return response()->json(['success' => true, 'message' => 'Branch created successfully.']);
     }
-    
+
 
     // Send data to the employee page
 
 
     public function editbranchDetails(Request $request)
 {
-   
+
     $id = $request->id;
     $branch = Branch::find($id);
     return view('editbranch', compact('branch'));
 }
-    
+
 
 public function updateBranchDetails(Request $request, $id)
 {
@@ -95,6 +95,12 @@ public function deletebranchdetails($id)
         $user = Branch::findOrFail($id);
         $user->delete();
         return redirect()->route('branch')->with('success', 'User updated successfully.');
+    }
+
+
+
+    public function deleteexpencedetails($id){
+        dd("working");
     }
 
 }

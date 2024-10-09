@@ -260,8 +260,18 @@
                                                 href="{{ route('editearning', ['id' => $user->id]) }}">Edit</a>
                                         </div>
 
+                                        <div class="menu-item px-3">
+                                            <form method="POST"
+                                                action="{{ route('deleteearningdetails', ['id' => $user->id]) }}">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="menu-link px-3"
+                                                    style="background: none; border: none; padding: 0; font: inherit; cursor: pointer;">Delete</button>
+                                            </form>
+                                        </div>
+                                        
 
-                                      
+
                                     </div>
                                 </td>
                                 <!--end::Action=-->

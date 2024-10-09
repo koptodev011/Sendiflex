@@ -25,7 +25,7 @@
 </head>
 
 <div style="margin-left:5px;" class="toolbar">
-    <h1>Earnings</h1>
+    <h1>Educational Plan</h1>
 </div>
 
 <body id="kt_body"
