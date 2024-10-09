@@ -244,3 +244,7 @@ Route::post('addroadmaps', [App\Http\Controllers\Educationalplan::class, 'addroa
 Route::post('settimeline', [App\Http\Controllers\Educationalplan::class, 'settimeline'])->middleware('auth');
 Route::post('/printroadmap',[App\Http\Controllers\PDFController::class,'printroadmap'])->middleware('auth');
 
+
+
+//History route
+Route::get('/history', [App\Http\Controllers\history::class, 'index'])->name('history');

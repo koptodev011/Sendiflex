@@ -249,7 +249,7 @@
 
                             <div class="menu-item menu-accordion">
 
-<a class="menu-link " href="{{ route('carManagement') }}">
+<a class="menu-link " href="{{ route('history') }}">
     <span class="menu-icon">
         <span class="svg-icon svg-icon-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
